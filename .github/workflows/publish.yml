@@ -1,4 +1,4 @@
-name: Daily Investors
+name: Publish to Docker
 on:
   push:
     branches:
@@ -23,7 +23,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{DailyInvestors}}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build container
         uses: docker/build-push-action@v5
